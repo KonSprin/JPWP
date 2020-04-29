@@ -78,8 +78,8 @@ public class Network {
      **/
 
 	public boolean message(String username, String message){
-		Packet packet = new Packet;
-		packet.setData(username+message);
+		Packet packet = new Packet();
+		packet.setData(string.getBytes(username+message));
 		packet.setPort(PORT);
 		packet.setAddress(friendsAddress);
 		return send(packet);
