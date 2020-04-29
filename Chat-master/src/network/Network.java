@@ -78,7 +78,7 @@ public class Network {
      **/
 
 	public boolean message(String username, String message){
-		(...)
+		String packet = username + ": " + message;
 		return send(packet);
 	}
 
