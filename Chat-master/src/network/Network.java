@@ -21,7 +21,7 @@ public class Network {
 
     public void run() {
         while (true) {
-            if (receive()) {
+            if (receive() == false) {
                 System.out.println("Closing network");
                 socket.close();
                 break;
