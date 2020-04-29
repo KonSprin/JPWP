@@ -32,8 +32,9 @@ public class Network {
     //TODO uzupełnij poniższą metodę i dobierz odpowiedni wyjątek
     public boolean startServer() {
         try {
-            //??
-        } catch (Exception e) {
+            socket = new DatagramSocket(PORT);
+        } catch (SocketException e) {
+			System.out.println(e);
             return false;
         }
         return true;
@@ -43,7 +44,7 @@ public class Network {
         try {
             socket = new DatagramSocket();
             friendsAddress = InetAddress.getByName(ip);
-            //??
+            friendsPort = PORT;
         } catch (SocketException | UnknownHostException e) {
             System.out.println("Unable to start client: " + e);
             return false;
@@ -76,6 +77,10 @@ public class Network {
      (odwołanie do tej metody jest w klasie Chat w linii 69).
      **/
 
+	public boolean message(String username, String message){
+		(...)
+		return send(packet);
+	}
 
     public boolean receive() {
         DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
