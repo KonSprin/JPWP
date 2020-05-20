@@ -158,9 +158,12 @@ class Network(object):
                 accuracy = self.accuracy(evaluation_data)
                 if accuracy > best_accuracy:
                     # Uzupełnij tutaj, pass nie bedzie Ci później potrzebne
-                    pass
+                    best_accuracy = accuracy
+                    no_accuracy_change = 0
+                    # pass
                 else:
                     # Tutaj również coś dopisz
+                    no_accuracy_change += 1
                     print("Brak poprawy od {} epok".format(no_accuracy_change))
                 if no_accuracy_change == early_stopping_n:
                     print("Wczesne zatrzymywanie: Zatrzymano uczenie, brak poprawy skuteczności w ostatnich {} epokach"
