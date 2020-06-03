@@ -1,5 +1,5 @@
 import requests
-import Zadanie_1
+from Zadanie_1 import get_access_token
 
 # Korzystając z dokumentacji REST API Allegro oraz z napisanej w zadaniu pierwszym funkcji
 # spróbuj wysłać zapytanie do Allegro które zwróci JSON z wyszukiwaniem przedmiotu który cię interesuje.
@@ -10,7 +10,7 @@ import Zadanie_1
 
 def get_some_offers():
     search_url = "https://api.allegro.pl" + "/offers/listing"
-    access_token = Zadanie_1.get_access_token()
+    access_token = get_access_token()
     
     headers = {"charset": "utf-8", "Accept-Language": "pl-PL", "Content-Type": "application/json",
                "Accept": 'application/vnd.allegro.public.v1+json',
