@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
-import Zadanie_1
-import Zadanie_2
+from Zadanie_2 import get_some_offers
 
 app = Flask(__name__)
 
@@ -11,6 +10,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
+
+    data = get_some_offers()
 
     return render_template("main.html", data = data)
 
